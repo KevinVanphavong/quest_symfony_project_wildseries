@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary-color: #bd9e8c;
+$secondy-color : #e5dbd3;
+$light-color: lighten($secondy-color, 50%);
+
+body {
+    background-color: $secondy-color;
+}
+
+.navbar {
+    background-color: $primary-color;
+    color : $secondy-color;
+    a {
+        color : $light-color;
+    }
+}
