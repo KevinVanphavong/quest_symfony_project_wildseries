@@ -35,7 +35,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/{categoryName}", methods={"GET"}, name="show")
+     * @Route("/{categoryName}", name="show")
      * @return Response A response instance
      */
     public function show($categoryName): Response
