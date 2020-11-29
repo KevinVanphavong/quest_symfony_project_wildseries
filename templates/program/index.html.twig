@@ -1,4 +1,21 @@
 {% extends 'base.html.twig' %}
+{% block title %}All programs{% endblock %}
+
 {% block body %}
-    Salut la moula
+    <h1>Toutes les séries de la table program : </h1>
+    {% for program in programs %}
+        <div>
+            <h2>{{ loop.index }} / <strong>{{ program.title }}</strong> - Catégorie : <strong>{{ program.category.name }}</strong></h2>
+            <p>{{ program.summary }}</p>
+{#            <a href="/programs/show/{{ program.id }}">See more about {{ program.title }}</a>#}
+            <a href="{{ path('program_show', { id: program.id }) }}">Plus de détails sur {{ program.title }}</a>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+    <br>
+    <hr>
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
 {% endblock %}

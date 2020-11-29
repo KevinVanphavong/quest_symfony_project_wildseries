@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nos catégories | Wild Séries{% endblock %}
+
+{% block body %}
+    <h1>Toutes les catégories des différentes séries : </h1>
+    {% for category in categories %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="https://via.placeholder.com/300x250" alt="Card image cap">
+            <div class="card-body">
+                <h2>{{ loop.index }} / <strong>{{ category.name }}</strong></h2>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="{{ path('category_show', { categoryName: category.name }) }}" class="btn btn-primary">
+                    Jette un oeil aux meilleurs séries de la catégorie {{ category.name }}
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+    <br>
+    <hr>
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+{% endblock %}
