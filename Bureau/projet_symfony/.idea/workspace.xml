@@ -2,24 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d06681f-420a-4066-90ef-2d4942f5b478" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/wild-series/src/Controller/DefaultController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wild-series/src/Controller/ProgramController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wild-series/templates/_navbar.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wild-series/templates/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wild-series/templates/program/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wild-series/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wild-series/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wild-series/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wild-series/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wild-series/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/symfony.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wild-series/assets/styles/navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wild-series/assets/styles/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wild-series/templates/program/season_show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/assets/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/assets/styles/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/src/Controller/ProgramController.php" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/src/Controller/ProgramController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/src/Entity/Program.php" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/src/Entity/Program.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/templates/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/_navbar.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wild-series/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/templates/category/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/category/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/templates/category/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/category/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/templates/program/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/program/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wild-series/templates/program/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/wild-series/templates/program/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/wild-series/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -139,17 +142,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projet2db" />
+    <property name="database.data.extractors.current.export.id" value="SQL Inserts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wild-series/templates/category" />
+      <recent name="$PROJECT_DIR$/wild-series" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/wild-series/templates" />
       <recent name="$PROJECT_DIR$/wild-series/templates/default" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="&lt;/script&gt;" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -159,34 +173,83 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605976265467</updated>
-      <workItem from="1605976266605" duration="27916000" />
+      <workItem from="1605976266605" duration="28674000" />
+      <workItem from="1606086444743" duration="2173000" />
+      <workItem from="1606334821696" duration="3938000" />
+      <workItem from="1606388242778" duration="1607000" />
+      <workItem from="1606403385076" duration="33144000" />
+      <workItem from="1606836836982" duration="31960000" />
+      <workItem from="1606983384436" duration="20000" />
+      <workItem from="1606983478976" duration="1375000" />
+      <workItem from="1606985990086" duration="8771000" />
+      <workItem from="1606995836318" duration="722000" />
+      <workItem from="1607009181012" duration="2716000" />
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="72" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606075441053">
+    <state x="72" y="211" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606655716660">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="72" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606075441053" />
+    <state x="72" y="211" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606655716660" />
+    <state x="866" y="359" width="595" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606845062993">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="866" y="359" width="595" height="403" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1606845062993" />
+    <state x="832" y="300" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606857152677">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="832" y="300" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606857152677" />
+    <state x="516" y="301" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606662060699">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="516" y="301" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606662060699" />
     <state x="468" y="394" width="518" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606064034446">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="468" y="394" width="518" height="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/72.27.1848.1053@72.27.1848.1053" timestamp="1606064034446" />
+    <state x="681" y="311" width="624" height="491" key="DUMP_DIALOG_DIMENSION_KEY" timestamp="1606992459702">
+      <screen x="76" y="27" width="1844" height="1053" />
+    </state>
+    <state x="681" y="311" width="624" height="491" key="DUMP_DIALOG_DIMENSION_KEY/76.27.1844.1053@76.27.1844.1053" timestamp="1606992459702" />
     <state x="255" y="330" width="719" height="452" key="EditFileWatcherDialog" timestamp="1606072163610">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="255" y="330" width="719" height="452" key="EditFileWatcherDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606072163610" />
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1605985049756">
+    <state x="781" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1606992681750">
+      <screen x="76" y="27" width="1844" height="1053" />
+    </state>
+    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1606837141378" />
+    <state x="781" y="311" width="424" height="491" key="FileChooserDialogImpl/76.27.1844.1053@76.27.1844.1053" timestamp="1606992681750" />
+    <state x="372" y="228" width="673" height="568" key="NewPhpClassDialog" timestamp="1606661702529">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="779" y="311" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1605985049756" />
-    <state x="372" y="228" width="673" height="568" key="NewPhpClassDialog" timestamp="1605984684206">
+    <state x="372" y="228" width="673" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1606661702529" />
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1606861730016">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="372" y="228" width="673" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1605984684206" />
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1605976276013">
+    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1606861730016" />
+    <state width="501" height="446" key="SwitcherDM" timestamp="1606843539439">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="485" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1605976276013" />
+    <state width="501" height="446" key="SwitcherDM/72.27.1848.1053@72.27.1848.1053" timestamp="1606843539439" />
+    <state x="1243" y="401" width="367" height="312" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1606935647650">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="1243" y="401" width="367" height="312" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/72.27.1848.1053@72.27.1848.1053" timestamp="1606935647650" />
+    <state x="731" y="361" width="524" height="391" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog" timestamp="1606992510316">
+      <screen x="76" y="27" width="1844" height="1053" />
+    </state>
+    <state x="731" y="361" width="524" height="391" key="com.intellij.database.dbimport.ImportUtil.ChooseTargetDialog/76.27.1844.1053@76.27.1844.1053" timestamp="1606992510316" />
+    <state x="342" y="167" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606986453501">
+      <screen x="76" y="27" width="1844" height="1053" />
+    </state>
+    <state x="339" y="167" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1606859416462" />
+    <state x="342" y="167" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/76.27.1844.1053@76.27.1844.1053" timestamp="1606986453501" />
+    <state x="620" y="246" width="672" height="677" key="run.anything.popup" timestamp="1606943583978">
+      <screen x="76" y="27" width="1844" height="1053" />
+    </state>
+    <state x="617" y="246" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1606734301731" />
+    <state x="620" y="246" width="672" height="677" key="run.anything.popup/76.27.1844.1053@76.27.1844.1053" timestamp="1606943583978" />
   </component>
 </project>
