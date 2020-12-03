@@ -57,10 +57,12 @@ class CategoryController extends AbstractController
                 'No category "'.$categoryName.'" found in category\'s table.'
             );
         }
+//        var_dump($category); die();
         return $this->render(
             'category/show.html.twig',
             [
-                'programs' => $programs
+                'programs' => $programs,
+                'category' => $categoryName
             ]
         );
     }

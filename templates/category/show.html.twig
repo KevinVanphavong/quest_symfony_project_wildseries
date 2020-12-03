@@ -2,25 +2,37 @@
 {% block title %}Catégorie |{% endblock %}
 
 {% block body %}
+<section class="container">
+    <h1>Les séries - {{ category }}</h1>
     {% for program in programs %}
-
-        <div class="media">
-            <img class="align-self-start mr-3" style="width: 20rem;" src="{{program.poster}}" alt="{{ program.title }} poster">
-            <div class="media-body">
-                <h1>{{ program.id }} / {{ program.title }}</h1>
-                <p>{{ program.summary }}</p>
-                <p><u>Catégorie</u> : <strong>{{ program.category.name }}</strong></p>
-                <a href="{{ path('program_show', { id: program.id }) }}" class="btn btn-primary">See more about {{ program.title }}</a>
+        <div class="jumbotron d-lg-flex bg-light">
+            <div>
+                <img src="{{ program.poster }}"
+                     style="width: 18rem;
+                         height:30rem;
+                         margin-right: 20px;"
+                     alt="image of {{ program.title }}">
+            </div>
+            <div>
+                <h2 class="display-4"> <strong>{{ program.title }}</strong> </h2>
+                <div class="d-flex align-items-center">
+                    <p class="label-category">Catégorie :</p>
+                    <h3><strong>{{ program.category.name }}</strong></h3>
+                </div>
+                <p>{{ program.summary }}.</p>
+                <a href="{{ path('program_show', { id: program.id }) }}" class="btn btn-primary">
+                    Plus de détails sur {{ program.title }}
+                </a>
             </div>
         </div>
-
     {% else %}
         Aucune série trouvée.
     {% endfor %}
 
-    <a href="{{ path('category_index') }}">
+    <a class="back" href="{{ path('category_index') }}">
         Retour à la liste des catégories
     </a>
+</section>
 {% endblock %}
 
 

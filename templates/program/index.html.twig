@@ -2,39 +2,37 @@
 {% block title %}All programs{% endblock %}
 
 {% block body %}
-    <h1>Toutes les séries de la table program : </h1>
-    <section class="container-fluid d-flex flex-wrap">
+    <section class="container">
+    <h1>Toutes nos séries</h1>
     {% for program in programs %}
-        <div class="col-md-6 col-sm-12" style="padding: 10px;">
-            <div class="card">
-                <div class="card-body d-flex">
-                    <div>
-                    <img src="{{ program.poster }}"
-                         style="width: 18rem;
+    <div class="jumbotron d-lg-flex bg-light">
+        <div>
+            <img src="{{ program.poster }}"
+                 style="width: 18rem;
                          height:30rem;
                          margin-right: 20px;"
-                         alt="image of {{ program.title }}">
-                    </div>
-                    <div>
-                        <h2>{{ loop.index }} / <strong>{{ program.title }}</strong> - Catégorie : <strong>{{ program.category.name }}</strong></h2>
-                        <p>{{ program.summary }}</p>
-                        <a href="{{ path('program_show', { id: program.id }) }}"
-                           class="btn"
-                           style="background-color: #bd9e8c;"
-                           onmouseover="this.style.background='#e5dbd3'"
-                           onmouseout="this.style.background='#bd9e8c'"
-                        >Plus de détails sur {{ program.title }}</a>
-                    </div>
-                </div>
-            </div>
+                 alt="image of {{ program.title }}">
         </div>
+        <div>
+            <h2><strong>{{ program.title }}</strong> </h2>
+            <div class="d-flex align-items-center">
+                <p class="label-category">Catégorie :</p>
+                <h3><strong>{{ program.category.name }}</strong></h3>
+            </div>
+            <p class="lead">{{ program.summary }}.</p>
+            <a href="{{ path('program_show', { id: program.id }) }}"
+               class="btn btn-primary">Plus de détails sur {{ program.title }}</a>
+        </div>
+    </div>
     {% else %}
         Aucune série trouvée.
     {% endfor %}
     </section>
+
+
     <br>
     <hr>
-    <a href="{{ path('app_index') }}">
+    <a class="back" href="{{ path('app_index') }}">
         Retour à l'accueil
     </a>
 {% endblock %}

@@ -1,0 +1,9 @@
+.navbar {
+  background-color: lighten($dark, 10%);
+  color: $light;
+  margin-bottom: $spacing-2;
+  a {
+    color: $light;
+    font-family: $title-font;
+  }
+}

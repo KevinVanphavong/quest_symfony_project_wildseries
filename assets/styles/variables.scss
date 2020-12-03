@@ -1,0 +1,31 @@
+$primary: #f7ca9c;
+$secondary: #f9e59a;
+$tertiary: #a2c3c8;
+
+$primary-light: lighten($primary, 25%);
+$primary-dark: darken($primary, 10%);
+
+$secondary-light: lighten($secondary, 25%);
+$secondary-dark: darken($secondary, 10%);
+
+$tertiary-light: lighten($tertiary, 25%);
+$tertiary-dark: darken($tertiary, 10%);
+
+$light:#fff6db;
+$dark:#000000;
+
+$grey1:#cfcfcf;
+$grey2:#808080;
+$grey3:#fff6db;
+
+$title-font : 'Permanent Marker', cursive;;
+$p-font : 'Frank Ruhl Libre', serif;
+$title-size : 40px;
+$p-size : 20px;
+
+$spacing: 8px;
+$spacing-2: 16px;
+$spacing-4: 32px;
+$spacing-6: 64px;
+$spacing-section: 80px;
+

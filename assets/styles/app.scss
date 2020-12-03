@@ -1,17 +1,40 @@
+@import "variables.scss";
 @import "~bootstrap/scss/bootstrap";
-
-$primary-color: #bd9e8c;
-$secondy-color : #e5dbd3;
-$light-color: lighten($secondy-color, 50%);
+@import "navbar.scss";
 
 body {
-    background-color: $secondy-color;
+    background-color: $dark;
 }
 
-.navbar {
-    background-color: $primary-color;
-    color : $secondy-color;
-    a {
-        color : $light-color;
-    }
+h1 {
+    font-family: $title-font;
+    color: $primary;
+    text-align: center;
+    margin: $spacing-2 0;
+}
+
+h2, h3, h4, h5, h6, a, button {
+     font-family: $title-font;
+}
+
+p {
+    font-family: $p-font;
+    font-size: $p-size;
+}
+
+.label-category {
+    margin: 0 $spacing 0 0;
+}
+
+.media {
+    color: $light;
+}
+
+.img-series-show {
+    max-height : 75vh;
+    margin-right: $spacing-2;
+}
+
+.back {
+    margin : $spacing-4;
 }

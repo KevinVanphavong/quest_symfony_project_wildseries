@@ -1,0 +1,27 @@
+{%  extends 'base.html.twig' %}
+
+{% block body%}
+<section class="container">
+    <h1>{{ program.title }} - Saison {{ season.number }}</h1>
+    <p class="text-light"><strong>Description de la saison :</strong></p>
+    <p class="text-light">{{ season.description }}</p>
+
+    <div class="row">
+        {%  for episode in episodes %}
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-title"><strong>Episode {{ episode.number }}</p>
+                    <h2><strong>"{{ episode.title }}"</strong></h2>
+                    <p class="card-text">{{ episode.synopsis }}</p>
+                    <a href="#" class="btn btn-primary">Decouvrir</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            Aucun épisode, va au lit !
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}
