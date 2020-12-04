@@ -18,8 +18,8 @@
                     {% for season in seasons %}
                         <div class="list-seasons mr-1 mb-4 d-flex flex-column align-items-center">
                             <p class="mb-0">Saison {{ season.number }}</p>
-                            {# <h6 class="card-subtitle mb-2 text-muted">Année de sortie : {{ season.year }}</h6>#}
-                            <a href="{{ path('program_season_show',{ programId : program.id, seasonId : season.id }) }}" class="btn btn-primary">Découvrir</a>
+                            <a href="{{ path('program_season_show',{ program : program.id, season : season.id }) }}"
+                               class="btn btn-primary">Découvrir</a>
                         </div>
                     {% else %}
                         Aucune saison n'est disponible fraté !
