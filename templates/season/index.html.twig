@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Season index{% endblock %}
+
+{% block body %}
+    <h1>Season index</h1>
+<section class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th>Id</th>
+                <th>Number</th>
+                <th>Year</th>
+                <th>Série</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for season in seasons %}
+            <tr>
+                <td>{{ season.id }}</td>
+                <td>{{ season.number }}</td>
+                <td>{{ season.year }}</td>
+                <td class="text-primary">{{ season.program.title }}</td>
+                <td>{{ season.description }}</td>
+                <td>
+                    <a href="{{ path('season_show', {'id': season.id}) }}">show</a>
+                    <a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+
+<div class="container-fluid">
+    <a href="{{ path('season_new') }}">Create new</a>
+</div>
+{% endblock %}
