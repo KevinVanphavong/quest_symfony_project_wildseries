@@ -25,6 +25,14 @@
                         Aucune saison n'est disponible fraté !
                     {% endfor %}
                 </div>
+                <div class="d-flex flex-column">
+                    <p class="mb-0">Acteurs :</p>
+                        {% for actor in program.actors %}
+                            <a href="{{ path('actor_show', {actor : actor.id}) }}">- {{ actor.name }}</a>
+                        {% else %}
+                    <p>Aucun acteur pour cette série</p>
+                        {% endfor %}
+                </div>
             </div>
 
         </div>

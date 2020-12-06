@@ -21,7 +21,8 @@ Class ProgramController extends AbstractController
 {
     /**
      * The controller for the category add form
-     *
+     * @param Request $request
+     * @return Response
      * @Route("/new", name="new")
      */
     public function new(Request $request) : Response
@@ -50,7 +51,6 @@ Class ProgramController extends AbstractController
     }
     /**
      * @Route("/", name="index")
-     *
      * @return Response A response instance
      */
     public function index(): Response
@@ -68,10 +68,10 @@ Class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}",requirements={"id"="\d+"},
+     * @Route("/{id}",requirements={"id"="\d+"},
      *     methods={"GET"},
      *     name="show")
-     *
+     * @param Program $program
      * @return Response
      */
     public function show(Program $program):Response
@@ -85,7 +85,6 @@ Class ProgramController extends AbstractController
                 'No program with id : '.$program.' found in program\'s table.'
             );
         }
-//        var_dump($program);die();
         $seasons = $program->getSeasons();
         return $this->render('program/show.html.twig', [
             'program' => $program,
@@ -143,11 +142,6 @@ Class ProgramController extends AbstractController
      */
     public function showEpisodes(Program $program, Season $season, Episode $episode): Response
     {
-//        var_dump(
-//            $program,
-//            $season,
-//            $episode
-//        );die();
         return $this->render('program/episode_show.html.twig', [
             'program' => $program,
             'episode' => $episode,
