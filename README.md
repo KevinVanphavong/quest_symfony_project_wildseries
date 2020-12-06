@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 13 (Validation form through annotations with Constraint as @Assert)
+https://www.loom.com/share/9f0578d6bc914d0b957c0bece74f71da
+
 Here is the video for the challenge 12 (CRUD episode) : Enjoy the music
 https://www.loom.com/share/487b502d1f924d4fb77edb6e7416b2d5
 
