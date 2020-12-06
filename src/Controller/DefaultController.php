@@ -18,4 +18,13 @@ Class DefaultController extends AbstractController
             'website' => 'Wild Séries',
         ]);
     }
+
+    /**
+     * @Route("/test", name="app_test")
+     */
+    public function test(): Response
+    {
+        return $this->render('test.html.twig', [
+            'website' => 'Wild Séries',
+        ]);    }
 }
