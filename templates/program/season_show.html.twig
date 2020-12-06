@@ -9,11 +9,11 @@
 
     <div class="row">
         {%  for episode in episodes %}
-        <div class="col-sm-6">
+        <div class="col mb-3">
             <div class="card">
                 <div class="card-body">
                     <p class="card-title"><strong>Episode {{ episode.number }}</p>
-                    <h2><strong>"{{ episode.title }}"</strong></h2>
+                    <h2><strong>" {{ episode.title }} "</strong></h2>
                     <p class="card-text">{{ episode.synopsis }}</p>
                     <a href="{{ path('program_episode_show',{ program : program.id, season : season.id, episode : episode.id }) }}" class="btn btn-primary">Decouvrir</a>
                 </div>
@@ -25,4 +25,9 @@
     </div>
 
 </section>
+
+
+    <a class="back" href="{{ path('program_show', {id: program.id}) }}">
+        Retour aux épisodes
+    </a>
 {% endblock %}
