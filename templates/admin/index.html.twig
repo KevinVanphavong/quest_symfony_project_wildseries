@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{%  block body %}
+    <h1>Administration de " {{ website }} "</h1>
+
+    <section class="container text-light d-flex justify-content-between flex-wrap">
+        <div class="my-4">
+            <h2>Index des séries</h2>
+            <a href="{{ path('admin_programs') }}" class="btn btn-outline-primary">Index des séries</a>
+        </div>
+        <div class="my-4">
+            <h2>Index des catégories</h2>
+            <a href="{{ path('admin_categories') }}" class="btn btn-outline-primary">Index des catégories</a>
+        </div>
+        <div class="my-4">
+            <h2>Index des acteurs</h2>
+            <a href="{{ path('admin_actors') }}" class="btn btn-outline-primary">Index des acteurs</a>
+        </div>
+        <div class="my-4">
+            <h2>Index des episodes</h2>
+            <a href="{{ path('admin_episodes') }}" class="btn btn-outline-primary">Index des episodes</a>
+        </div>
+    </section>
+{% endblock %}

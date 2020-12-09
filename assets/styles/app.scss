@@ -42,3 +42,11 @@ p {
 .back {
     margin : $spacing-4;
 }
+
+.black-mirror {
+    box-sizing: border-box;
+    width: 75vw;
+    border: 2px solid $secondary;
+    margin: 20px 0 50px 0;
+    box-shadow: 30px 15px 2px $primary, -30px -15px 2px red;
+}

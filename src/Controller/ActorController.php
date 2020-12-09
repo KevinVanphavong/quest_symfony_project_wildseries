@@ -28,7 +28,6 @@ class ActorController extends AbstractController
         $actors = $this->getDoctrine()
             ->getRepository(Actor::class)
             ->findAll();
-//        var_dump($actors[0]); die();
         return $this->render('actor/index.html.twig',
         [
             'actors' => $actors
