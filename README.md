@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 16 (Fixtures - Faker) :
+https://www.loom.com/share/8242b7d67f624dcda622e2fdc1410e4d
+
 Here is the video for the challenge 15 (EntityType) :
 https://www.loom.com/share/9970c556792142cb9b993d2bd3bf2cb0
 

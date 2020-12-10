@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class ActorController
- * @Route("/actors", name="actor_")
+ * @Route("/actor", name="actor_")
  */
 class ActorController extends AbstractController
 {
