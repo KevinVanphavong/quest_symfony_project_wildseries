@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 18 (mailer)
+https://www.loom.com/share/4ae7bdb4f7e34a52b859511c9f360f28
+
 Here is the video for the challenge 17 (Introducing to "Services")
 https://www.loom.com/share/4322761c24c94461a57695d1d885c1be
 

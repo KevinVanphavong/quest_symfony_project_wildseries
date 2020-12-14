@@ -1,0 +1,15 @@
+{% extends 'layoutEmail.html.twig' %}
+
+{% block title %} New program {% endblock %}
+
+{% block titleEmail %}
+    Nouvel épisode créé
+{% endblock %}
+
+{% block content %}
+    <p>Hello, voici le nouvel episode "{{ episode.title }}" (S{{ episode.season.number }}E{{ episode.number }}
+        de {{ episode.season.program.title }}) a été créé</p>
+    <p>Description : {{ episode.synopsis }}</p>
+    <a href="{{ url("program_season_show", { program: episode.season.program.id ,
+        season: episode.season.id }) }}">Retour aux épisodes</a>
+{% endblock %}
