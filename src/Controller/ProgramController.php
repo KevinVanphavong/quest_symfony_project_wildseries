@@ -8,6 +8,7 @@ use App\Entity\Program;
 use App\Entity\Season;
 use App\Form\EpisodeType;
 use App\Form\ProgramType;
+use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,10 +24,11 @@ Class ProgramController extends AbstractController
     /**
      * The controller for the category add form
      * @param Request $request
+     * @param Slugify $slugify
      * @return Response
      * @Route("/new", name="new")
      */
-    public function new(Request $request) : Response
+    public function new(Request $request, Slugify $slugify) : Response
     {
         // Create a new Category Object
         $program = new Program();
@@ -39,6 +41,8 @@ Class ProgramController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             // Deal with the submitted data
             $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             // Persist Category Object
             $entityManager->persist($program);
             // Flush the persisted object
@@ -104,10 +108,11 @@ Class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}",requirements={"id"="\d+"},
+     * @Route("/{slug}",
      *     methods={"GET"},
      *     name="show")
      * @param Program $program
+     * @param Slugify $slugify
      * @return Response
      */
     public function show(Program $program):Response

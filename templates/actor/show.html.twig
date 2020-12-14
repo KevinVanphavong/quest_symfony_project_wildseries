@@ -12,7 +12,7 @@
             <div>
                 <p class="mb-0 mt-2">Liste des séries jouées :</p>
                 {% for program in actor.programs %}
-                    <a class="text-dark" href="{{ path("program_show", { id: program.id }) }}">- {{ program.title }}</a>
+                    <a class="text-dark" href="{{ path("program_show", { slug: program.slug }) }}">- {{ program.title }}</a>
                 {% else %}
                     <p>Aucun épisode trouvé.</p>
                 {% endfor %}

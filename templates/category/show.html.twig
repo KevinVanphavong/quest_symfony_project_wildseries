@@ -20,7 +20,7 @@
                     <h3><strong>{{ program.category.name }}</strong></h3>
                 </div>
                 <p>{{ program.summary }}.</p>
-                <a href="{{ path('program_show', { id: program.id }) }}" class="btn btn-primary">
+                <a href="{{ path('program_show', { slug: program.slug }) }}" class="btn btn-primary">
                     Plus de détails sur {{ program.title }}
                 </a>
             </div>

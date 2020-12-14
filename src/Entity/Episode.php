@@ -22,7 +22,7 @@ class Episode
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="ne me laisse pas tout vide")
-     * @Assert\Length(min="255", minMessage=" {{ value }} c'est trop long, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage=" {{ value }} c'est trop long, elle ne devrait pas dépasser {{ limit }} caractères")
      */
     private $title;
 
@@ -41,6 +41,11 @@ class Episode
      * @ORM\JoinColumn(nullable=false)
      */
     private $season;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     public function getId(): ?int
     {
@@ -91,6 +96,18 @@ class Episode
     public function setSeason(?Season $season): self
     {
         $this->season = $season;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
