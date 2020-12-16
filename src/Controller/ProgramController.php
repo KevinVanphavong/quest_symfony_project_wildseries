@@ -3,9 +3,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Comment;
 use App\Entity\Episode;
 use App\Entity\Program;
 use App\Entity\Season;
+use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Form\ProgramType;
 use App\Service\Slugify;
@@ -32,6 +34,7 @@ Class ProgramController extends AbstractController
      * @param MailerInterface $mailer
      * @return Response
      * @Route("/new", name="new")
+     * @throws TransportExceptionInterface
      */
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer) : Response
     {
@@ -70,6 +73,9 @@ Class ProgramController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Program $program
+     * @return Response
      */
     public function edit(Request $request, Program $program): Response
     {
@@ -90,6 +96,9 @@ Class ProgramController extends AbstractController
 
     /**
      * @Route("/{id}/delete", name="delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Program $program
+     * @return Response
      */
     public function delete(Request $request, Program $program): Response
     {
@@ -125,7 +134,6 @@ Class ProgramController extends AbstractController
      *     methods={"GET"},
      *     name="show")
      * @param Program $program
-     * @param Slugify $slugify
      * @return Response
      */
     public function show(Program $program):Response
@@ -185,21 +193,34 @@ Class ProgramController extends AbstractController
     /**
      * @Route("/{program}/seasons/{season}/episode/{episode}",
      *     requirements={"program"="\d+", "season"="\d+", "episode"="\d+"},
-     *     methods={"GET"},
+     *     methods={"GET", "POST"},
      *     name="episode_show")
      *
      * @param Program $program
      * @param Season $season
      * @param Episode $episode
-     *
+     * @param Request $request
      * @return Response
      */
-    public function showEpisodes(Program $program, Season $season, Episode $episode): Response
+    public function showEpisodes(Program $program, Season $season, Episode $episode, Request $request): Response
     {
+        $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $comment->setEpisode($episode);
+            $comment->setAuthor($this->getUser());
+            $entityManager->persist($comment);
+            $entityManager->flush();
+            return $this->redirectToRoute('program_index');
+        }
         return $this->render('program/episode_show.html.twig', [
             'program' => $program,
             'episode' => $episode,
             'season' => $season,
+            'form' => $form->createView(),
         ]);
     }
 }

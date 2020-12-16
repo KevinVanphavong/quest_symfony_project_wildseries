@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 19 (login / login / adding comments for users)
+https://www.loom.com/share/d2a1baea7bda4ca4aa3986bad61bdae0
+
 Here is the video for the challenge 18 (mailer)
 https://www.loom.com/share/4ae7bdb4f7e34a52b859511c9f360f28
 

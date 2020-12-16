@@ -1,5 +1,6 @@
 {%  extends 'base.html.twig' %}
 {% block title %}{{ program.title }} | Episode {{ episode.number }} - Saison {{ season.number }}{% endblock %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 
 {% block body%}
@@ -29,10 +30,21 @@
                         <span><p class="label-category">Description : {{ episode.synopsis }}</p></span>
                     </div>
                 </div>
-
             </div>
         </div>
         <br>
+        <h3 class="text-primary"> Commentaires : </h3>
+            {% for comment in episode.comments %}
+                <p class="text-light">De : {{ comment.author.email }} <br>
+                    Note : {{ comment.rate }} <br>
+                    Commentaire : {{ comment.comment }}
+                </p>
+            {% endfor %}
+        <br>
+        {% if app.user %}
+        <h3>Ajouter un commentaire :</h3>
+        <p>{{ include('episode/_form.html.twig') }}</p>
+        {% endif %}
     </section>
 
     <a class="back" href="{{ path('program_season_show', {program: program.id, season: season.id}) }}">
