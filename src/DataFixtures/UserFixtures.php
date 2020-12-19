@@ -38,6 +38,7 @@ class UserFixtures extends Fixture
             $admin,
             'adminpassword'
         ));
+        $this->addReference('admin_1', $admin);
 
         $manager->persist($admin);
 

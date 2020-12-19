@@ -19,6 +19,7 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * Class ProgramController
@@ -51,6 +52,7 @@ Class ProgramController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $slug = $slugify->generate($program->getTitle());
             $program->setSlug($slug);
+            $program->setOwner($this->getUser());
             // Persist Category Object
             $entityManager->persist($program);
             // Flush the persisted object
@@ -72,13 +74,17 @@ Class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
      * @param Request $request
      * @param Program $program
      * @return Response
      */
     public function edit(Request $request, Program $program): Response
     {
+        if ($this->getUser() !== $program->getOwner()) {
+            // If not the owner, throws a 403 Access Denied exception
+            throw new AccessDeniedException('Calmos PapiChulo, tu ne peux pas éditer tu n\'as pas créé cette série');
+        }
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
@@ -202,7 +208,9 @@ Class ProgramController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function showEpisodes(Program $program, Season $season, Episode $episode, Request $request): Response
+    public function showEpisode(Program $program, Season $season, Episode $episode,
+                                Comment $comment,
+                                Request $request): Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
@@ -220,7 +228,25 @@ Class ProgramController extends AbstractController
             'program' => $program,
             'episode' => $episode,
             'season' => $season,
+            'comment' => $comment,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/comment/{id}/delete", name="delete_comment", methods={"DELETE"})
+     * @param Request $request
+     * @param Comment $comment
+     * @return Response
+     */
+    public function deleteComment(Request $request, Comment $comment): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$comment->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($comment);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('program_index');
     }
 }

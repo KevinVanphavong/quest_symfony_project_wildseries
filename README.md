@@ -1,7 +1,10 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
-Here is the video for the challenge 19 (login / login / adding comments for users)
+Here is the video for the challenge 20 (Securing the access of pages & features through "Routes")
+https://www.loom.com/share/6869ef4e6c5140e9b1d958a508301ec0
+
+Here is the video for the challenge 19 (managing users / login & logout / addi comments for users only)
 https://www.loom.com/share/d2a1baea7bda4ca4aa3986bad61bdae0
 
 Here is the video for the challenge 18 (mailer)
