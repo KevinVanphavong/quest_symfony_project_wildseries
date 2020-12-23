@@ -27,23 +27,27 @@
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
                 </li>
+                {% if app.user %}
                 <li class="nav-item">
                     <a class="nav-item nav-link" href="{{ path("admin_home") }}">Admin</a>
                 </li>
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
                 </li>
+                {% endif %}
             </ul>
             {% if app.user %}
                 {{ app.user.email }}
                 <a href="{{ path('app_logout') }}" class="mx-3"> Se déconnecter</a>
+                <a href="{{ path('profile') }}" class="mx-3"> Mon compte</a>
             {% else %}
                 <a href="{{ path('app_login') }}" class="mr-3"> Se connecter</a>
+                <a href="{{ path('app_register') }}" class="btn btn-primary">Créer un compte</a>
             {% endif %}
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
+{#            <form class="form-inline my-2 my-lg-0">#}
+{#                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">#}
+{#                <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>#}
+{#            </form>#}
         </div>
     </nav>
 {% endblock %}

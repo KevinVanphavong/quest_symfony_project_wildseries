@@ -22,8 +22,7 @@
             <input type="password" name="password" id="inputPassword" class="form-control mb-4" required>
 
             <input type="hidden" name="_csrf_token"
-                   value="{{ csrf_token('authenticate') }}"
-            >
+                   value="{{ csrf_token('authenticate') }}">
 
             {#
             Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -40,6 +39,6 @@
                 Sign in
             </button>
         </form>
+{#        <a href="{{ path('app_register') }}" class="btn btn-outline-primary mt-3">Créer un compte</a>#}
     </section>
-
 {% endblock %}

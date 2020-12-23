@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 21 (Regisstration - create new users)
+https://www.loom.com/share/56f1cf10245042db9edf9872d3e81bc7
+
 Here is the video for the challenge 20 (Securing the access of pages & features through "Routes")
 https://www.loom.com/share/6869ef4e6c5140e9b1d958a508301ec0
 

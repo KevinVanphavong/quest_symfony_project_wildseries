@@ -5,4 +5,36 @@
     <section class="text-center">
         <img class="black-mirror" src="https://statics.lesinrocks.com/content/thumbs/uploads/2017/12/width-1125-height-612-quality-10/black-mirror-season-4-uss-callister.jpg" alt="">
     </section>
+    <section class="container">
+        <h1>Nos derniers ajouts</h1>
+        {% for program in programs %}
+            <div class="jumbotron d-lg-flex bg-light">
+                <div>
+                    <img src="{{ program.poster }}"
+                         style="width: 18rem;
+                         height:30rem;
+                         margin-right: 20px;"
+                         alt="image of {{ program.title }}">
+                </div>
+                <div>
+                    <h2><strong>{{ program.title }}</strong> </h2>
+                    <div class="d-flex align-items-center">
+                        <p class="label-category">Catégorie :</p>
+                        <h3><strong>{{ program.category.name }}</strong></h3>
+                    </div>
+                    <p class="lead">{{ program.summary }}.</p>
+                    <a href="{{ path('program_show', { slug: program.slug }) }}"
+                       class="btn btn-primary">Plus de détails sur {{ program.title }}</a>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                    {%endif%}            {% if is_granted("ROLE_CONTRIBUTOR") %}
+                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                    {%endif%}
+                </div>
+            </div>
+        {% else %}
+            Aucune série trouvée.
+        {% endfor %}
+    </section>
+
 {% endblock %}

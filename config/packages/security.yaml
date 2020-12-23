@@ -44,3 +44,4 @@ security:
     access_control:
         - { path: ^/programs/new, roles: ROLE_ADMIN }
         - { path: ^/programs/[ a-z- ]+/edit, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }
