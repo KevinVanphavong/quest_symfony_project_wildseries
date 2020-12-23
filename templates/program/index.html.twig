@@ -4,8 +4,7 @@
 {% block body %}
     <section class="container">
     <h1>Toutes nos séries</h1>
-    <a href="{{ path('program_new') }}" class="btn-primary btn my-3">Ajouter une nouvelle série</a>
-        {% for program in programs %}
+    {% for program in programs %}
     <div class="jumbotron d-lg-flex bg-light">
         <div>
             <img src="{{ program.poster }}"

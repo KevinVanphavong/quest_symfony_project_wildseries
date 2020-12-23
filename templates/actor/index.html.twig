@@ -5,16 +5,10 @@
 {% block body %}
     <h1>Voici la liste des acteurs dans nos séries</h1>
     <section class="container">
-        <a href="" class="btn btn-primary my-3">Ajouter de nouveaux acteurs</a>
-        <div class="row d-flex justify-content-around">
         {% for actor in actors %}
-            <div class="card mb-3">
-                <img class="card-img-top" src="https://via.placeholder.com/200x200" alt="Card image cap">
-                <div class="card-body bg-dark d-flex justify-content-center align-items-center">
-                    <a class="text-primary" href="{{ path('actor_show', {actor: actor.id}) }}">{{ actor.name }}</a>
-                </div>
-            </div>
-        {% endfor %}
+        <div>
+            <h2><a class="text-light" href="{{ path('actor_show', {actor: actor.id}) }}">{{ actor.name }}</a></h2>
         </div>
+        {% endfor %}
     </section>
 {% endblock %}
