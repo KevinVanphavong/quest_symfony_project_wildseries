@@ -10,6 +10,8 @@ use App\Entity\Season;
 use App\Form\CommentType;
 use App\Form\EpisodeType;
 use App\Form\ProgramType;
+use App\Form\SearchProgramFormType;
+use App\Repository\ProgramRepository;
 use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -114,25 +116,34 @@ Class ProgramController extends AbstractController
             $entityManager->flush();
         }
 
-            return $this->redirectToRoute('admin_program');
+            return $this->redirectToRoute('admin_programs');
     }
 
     /**
      * @Route("/", name="index")
+     * @param Request $request
+     * @param ProgramRepository $programRepository
      * @return Response A response instance
      */
-    public function index(): Response
+    public function index(Request $request, ProgramRepository $programRepository): Response
     {
-        $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findAll();
+        $form = $this->createForm(SearchProgramFormType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
+            $programs = $programRepository->findLikeName($search);
+        } else {
+            $programs = $programRepository->findAll();
+        }
 
         return $this->render(
             'program/index.html.twig',
             [
                 'website' => 'Wild Séries',
-                'programs' => $programs]
-        );
+                'programs' => $programs,
+                'form' => $form->createView(),
+            ]);
     }
 
     /**

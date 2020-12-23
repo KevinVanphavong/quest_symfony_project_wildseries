@@ -1,9 +1,22 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
 {% block title %}{{ parent() }} | Liste des séries{% endblock %}
 
 {% block body %}
     <section class="container">
     <h1>Toutes nos séries</h1>
+{#        <form class="form-inline my-2 my-lg-3">#}
+{#            <input class="form-control mr-sm-2" type="search" placeholder="Votre recherche .." aria-label="Search">#}
+{#            <button class="btn btn-primary my-2 my-sm-0" type="submit">Recherche</button>#}
+{#        </form>#}
+        <div class="d-flex flex-column text-light my-lg-3">
+            {{ form_start(form) }}
+            {{ form_row(form.search) }}
+            <button class="btn btn-primary">Rechercher</button>
+            {{ form_end(form) }}
+        </div>
+
     {% for program in programs %}
     <div class="jumbotron d-lg-flex bg-light">
         <div>
