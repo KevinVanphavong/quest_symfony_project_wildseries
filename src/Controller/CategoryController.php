@@ -25,6 +25,8 @@ class CategoryController extends AbstractController
      * The controller for the category add form
      * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="category_new")
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request) : Response
     {
@@ -43,8 +45,10 @@ class CategoryController extends AbstractController
             $entityManager->persist($category);
             // Flush the persisted object
             $entityManager->flush();
+
+            $this->addFlash('success', 'Une nouvelle catégorie vietn d\'être créée !');
             // Finally redirect to categories list
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('admin_categories');
         }
         return $this->render('category/new.html.twig', [
             "form" => $form->createView(),
@@ -53,6 +57,9 @@ class CategoryController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="category_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Category $category
+     * @return Response
      */
     public function edit(Request $request, Category $category): Response
     {
@@ -62,7 +69,9 @@ class CategoryController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('category_index');
+            $this->addFlash('warning', 'Tu viens de modifier une catégorie !');
+
+            return $this->redirectToRoute('admin_categories');
         }
 
         return $this->render('category/edit.html.twig', [
@@ -73,6 +82,9 @@ class CategoryController extends AbstractController
 
     /**
      * @Route("/{id}", name="category_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param Category $category
+     * @return Response
      */
     public function delete(Request $request, Category $category): Response
     {
@@ -82,7 +94,9 @@ class CategoryController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('category_index');
+        $this->addFlash('danger', 'Oh non trop triste tu as supprimé une catégorie');
+
+        return $this->redirectToRoute('admin_categories');
     }
 
     /**

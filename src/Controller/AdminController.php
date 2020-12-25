@@ -30,6 +30,24 @@ class AdminController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstrac
     }
 
     /**
+     * @Route("/index/acteurs", name="actors")
+     * @return Response A response instance
+     */
+    public function indexActors(): Response
+    {
+        $actors = $this->getDoctrine()
+            ->getRepository(Actor::class)
+            ->findAll();
+
+        return $this->render(
+            'admin/actors.html.twig',
+            [
+                'website' => 'Wild Séries',
+                'actors' => $actors]
+        );
+    }
+
+    /**
      * @Route("/index/series", name="programs")
      * @return Response A response instance
      */
@@ -77,6 +95,7 @@ class AdminController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstrac
 
     /**
      * @Route("/index/actors", methods={"GET"}, name="actors")
+     * @param ActorRepository $actorRepository
      * @return Response
      */
     public function index(ActorRepository $actorRepository): Response

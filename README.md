@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 23 (flash message)
+https://www.loom.com/share/9dab4cb4c1a5484b81919586abeb00fa
+
 Here is the video for the challenge 22 (Personalized requests such as searchbar)
 https://www.loom.com/share/b90dca7809e44cc19242818b6ad1dd89
 

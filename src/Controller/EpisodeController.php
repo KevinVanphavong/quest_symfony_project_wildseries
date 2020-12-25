@@ -9,6 +9,7 @@ use App\Service\Slugify;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,6 +21,8 @@ class EpisodeController extends AbstractController
 {
     /**
      * @Route("/", name="episode_index", methods={"GET"})
+     * @param EpisodeRepository $episodeRepository
+     * @return Response
      */
     public function index(EpisodeRepository $episodeRepository): Response
     {
@@ -30,8 +33,11 @@ class EpisodeController extends AbstractController
 
     /**
      * @Route("/new", name="episode_new", methods={"GET","POST"})
+     * @param Request $request
      * @param Slugify $slugify
      * @param MailerInterface $mailer
+     * @return Response
+     * @throws TransportExceptionInterface
      */
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
@@ -54,6 +60,8 @@ class EpisodeController extends AbstractController
 
             $mailer->send($email);
 
+            $this->addFlash('success', 'Trop cool un nouvel épisode à matter ce soir !');
+
             return $this->redirectToRoute('episode_index');
         }
 
@@ -65,7 +73,9 @@ class EpisodeController extends AbstractController
 
     /**
      * @Route("/{slug}", name="episode_show", methods={"GET"})
+     * @param Episode $episode
      * @param Slugify $slugify
+     * @return Response
      */
     public function show(Episode $episode, Slugify $slugify): Response
     {
@@ -76,7 +86,10 @@ class EpisodeController extends AbstractController
 
     /**
      * @Route("/{slug}/edit", name="episode_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Episode $episode
      * @param Slugify $slugify
+     * @return Response
      */
     public function edit(Request $request, Episode $episode, Slugify $slugify): Response
     {
@@ -90,7 +103,9 @@ class EpisodeController extends AbstractController
             $entityManager->persist($episode);
             $entityManager->flush();
 
-            return $this->redirectToRoute('episode_index');
+            $this->addFlash('warning', 'Cet épisode vient d\'être modifié bebew !');
+
+            return $this->redirectToRoute('admin_episodes');
         }
 
         return $this->render('episode/edit.html.twig', [
@@ -101,7 +116,10 @@ class EpisodeController extends AbstractController
 
     /**
      * @Route("/{slug}", name="episode_delete", methods={"DELETE"})7
+     * @param Request $request
+     * @param Episode $episode
      * @param Slugify $slugify
+     * @return Response
      */
     public function delete(Request $request, Episode $episode, Slugify $slugify): Response
     {
@@ -111,6 +129,8 @@ class EpisodeController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('episode_index');
+        $this->addFlash('danger', 'Trop triste je ne pourrais plus revoir cet épisode');
+
+        return $this->redirectToRoute('admin_episodes');
     }
 }

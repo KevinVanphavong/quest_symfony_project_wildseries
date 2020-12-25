@@ -4,20 +4,22 @@
 
     <section class="container text-light d-flex justify-content-between flex-wrap">
         <div class="my-4">
-            <h2>Index des séries</h2>
-            <a href="{{ path('admin_programs') }}" class="btn btn-outline-primary">Index des séries</a>
-        </div>
-        <div class="my-4">
-            <h2>Index des catégories</h2>
+            <h2>Les catégories</h2>
             <a href="{{ path('admin_categories') }}" class="btn btn-outline-primary">Index des catégories</a>
         </div>
         <div class="my-4">
-            <h2>Index des acteurs</h2>
-            <a href="{{ path('admin_actors') }}" class="btn btn-outline-primary">Index des acteurs</a>
+            <h2>Les séries</h2>
+            <a href="{{ path('admin_programs') }}" class="btn btn-outline-primary">Index des séries</a>
         </div>
+
         <div class="my-4">
-            <h2>Index des episodes</h2>
+            <h2>Les épisodes</h2>
             <a href="{{ path('admin_episodes') }}" class="btn btn-outline-primary">Index des episodes</a>
         </div>
+        <div class="my-4">
+            <h2>Les acteurs</h2>
+            <a href="{{ path('admin_actors') }}" class="btn btn-outline-primary">Index des acteurs</a>
+        </div>
+
     </section>
 {% endblock %}

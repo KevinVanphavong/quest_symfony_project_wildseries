@@ -66,9 +66,13 @@ Class ProgramController extends AbstractController
                 ->html($this->renderView('program/newProgramEmail.html.twig', ['program' => $program]));
 
             $mailer->send($email);
+
+            $this->addFlash('success', 'Une nouvelle série vient de s\'ajouter grâce
+             à toi bebew !');
+
             // [...]
             // Finally redirect to categories list
-            return $this->redirectToRoute('program_index');
+            return $this->redirectToRoute('admin_programs');
         }
         return $this->render('program/new.html.twig', [
             "form" => $form->createView(),
@@ -93,6 +97,8 @@ Class ProgramController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('warning', 'La série a bien été modifié bebew !');
+
             return $this->redirectToRoute('admin_programs');
         }
 
@@ -116,7 +122,9 @@ Class ProgramController extends AbstractController
             $entityManager->flush();
         }
 
-            return $this->redirectToRoute('admin_programs');
+        $this->addFlash('danger', 'La série ... (sniiif) ... est supprimé bebew maintenant !');
+
+        return $this->redirectToRoute('admin_programs');
     }
 
     /**
