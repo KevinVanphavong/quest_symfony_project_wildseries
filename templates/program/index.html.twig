@@ -37,7 +37,8 @@
                class="btn btn-primary">Plus de détails sur {{ program.title }}</a>
             {% if is_granted("ROLE_ADMIN") %}
                 <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
-            {%endif%}            {% if is_granted("ROLE_CONTRIBUTOR") %}
+            {%endif%}
+            {% if is_granted("ROLE_CONTRIBUTOR") %}
                 <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
             {%endif%}
         </div>

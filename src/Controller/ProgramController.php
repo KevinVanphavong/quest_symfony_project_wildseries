@@ -228,7 +228,7 @@ Class ProgramController extends AbstractController
      * @return Response
      */
     public function showEpisode(Program $program, Season $season, Episode $episode,
-                                Comment $comment,
+//                                Comment $comment,
                                 Request $request): Response
     {
         $comment = new Comment();
@@ -247,8 +247,8 @@ Class ProgramController extends AbstractController
             'program' => $program,
             'episode' => $episode,
             'season' => $season,
-            'comment' => $comment,
-            'form' => $form->createView(),
+//            'comment' => $comment,
+            'formComment' => $form->createView(),
         ]);
     }
 

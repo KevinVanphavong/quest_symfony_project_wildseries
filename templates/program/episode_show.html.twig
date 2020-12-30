@@ -1,6 +1,6 @@
 {%  extends 'base.html.twig' %}
 {% block title %}{{ program.title }} | Episode {{ episode.number }} - Saison {{ season.number }}{% endblock %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% form_theme formComment 'bootstrap_4_layout.html.twig' %}
 
 
 {% block body%}
@@ -40,20 +40,20 @@
                     Commentaire : {{ comment.comment }}
                 </p>
                 {% if app.user %}
-                {% if is_granted("ROLE_ADMIN") or app.user.email == comment.author.email %}
-                    {#
-                    Supprimer le commentaire créé
-                    Seulement si Role Admin
-                    ou Seulement si connecté
-                    #}
-                    <p>{{ include('program/_delete_comment.html.twig') }}</p>
+                    {% if is_granted("ROLE_ADMIN") or app.user.email == comment.author.email %}
+                        {#
+                        Supprimer le commentaire créé
+                        Seulement si Role Admin
+                        ou Seulement si connecté
+                        #}
+                        <p>{{ include('program/_delete_comment.html.twig') }}</p>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
             {% endfor %}
         <br>
         {% if app.user %}
         <h3>Ajouter un commentaire :</h3>
-        <p>{{ include('episode/_form.html.twig') }}</p>
+        <p>{{ include('episode/_form_comment.html.twig') }}</p>
         {% endif %}
 
 
