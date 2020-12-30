@@ -48,16 +48,10 @@ class User implements UserInterface
      */
     private $programs;
 
-    /**
-     * @ORM\OneToMany(targetEntity=ProgramWatchlist::class, mappedBy="user")
-     */
-    private $favoritesPrograms;
-
     public function __construct()
     {
         $this->comments = new ArrayCollection();
         $this->programs = new ArrayCollection();
-        $this->favoritesPrograms = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -192,36 +186,6 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($program->getOwner() === $this) {
                 $program->setOwner(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|ProgramWatchlist[]
-     */
-    public function getFavoritesPrograms(): Collection
-    {
-        return $this->favoritesPrograms;
-    }
-
-    public function addFavoritesProgram(ProgramWatchlist $favoritesProgram): self
-    {
-        if (!$this->favoritesPrograms->contains($favoritesProgram)) {
-            $this->favoritesPrograms[] = $favoritesProgram;
-            $favoritesProgram->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFavoritesProgram(ProgramWatchlist $favoritesProgram): self
-    {
-        if ($this->favoritesPrograms->removeElement($favoritesProgram)) {
-            // set the owning side to null (unless already changed)
-            if ($favoritesProgram->getUser() === $this) {
-                $favoritesProgram->setUser(null);
             }
         }
 
