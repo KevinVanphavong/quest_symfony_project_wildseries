@@ -13,6 +13,7 @@ use App\Form\ProgramType;
 use App\Form\SearchProgramFormType;
 use App\Repository\ProgramRepository;
 use App\Service\Slugify;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -267,5 +268,28 @@ Class ProgramController extends AbstractController
         }
 
         return $this->redirectToRoute('program_index');
+    }
+
+    /**
+     * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
+     * @param Request $request
+     * @param Program $program
+     * @param EntityManagerInterface $entityManager
+     * @return Response
+     */
+    public function addToWatchlist(Request $request,
+                                   Program $program,
+                                   EntityManagerInterface $entityManager): Response
+    {
+        if ($this->getUser()->getPrograms()->contains($program)) {
+            $this->getUser()->removeProgram($program);
+        }
+        else {
+            $this->getUser()->addProgram($program);
+        }
+
+        $entityManager->flush();
+
+//        return $this->redirectToRoute('program_show', ['id' => $program->getId()]);
     }
 }

@@ -28,6 +28,9 @@
         </div>
         <div>
             <h2><strong>{{ program.title }}</strong> </h2>
+            <a href="{{ path('program_watchlist')}}">
+                <i class="{{ app.user.isInWatchlist(program) ? 'fas' : 'far' }} fa-heart watchlist"></i>
+            </a>
             <div class="d-flex align-items-center">
                 <p class="label-category">Catégorie :</p>
                 <h3><strong>{{ program.category.name }}</strong></h3>

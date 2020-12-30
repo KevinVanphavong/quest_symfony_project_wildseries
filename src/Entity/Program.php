@@ -84,10 +84,16 @@ class Program
      */
     private $owner;
 
+    /**
+     * @ORM\OneToMany(targetEntity=ProgramWatchlist::class, mappedBy="program")
+     */
+    private $favorites;
+
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
         $this->actors = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -246,5 +252,46 @@ class Program
         $this->owner = $owner;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|ProgramWatchlist[]
+     */
+    public function getFavorites(): Collection
+    {
+        return $this->favorites;
+    }
+
+    public function addFavorite(ProgramWatchlist $favorite): self
+    {
+        if (!$this->favorites->contains($favorite)) {
+            $this->favorites[] = $favorite;
+            $favorite->setProgram($this);
+        }
+
+        return $this;
+    }
+
+    public function removeFavorite(ProgramWatchlist $favorite): self
+    {
+        if ($this->favorites->removeElement($favorite)) {
+            // set the owning side to null (unless already changed)
+            if ($favorite->getProgram() === $this) {
+                $favorite->setProgram(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function isInWatchlist(User $user) : bool
+    {
+        foreach($this->favorites as $favorite){
+            if($favorite->getOwner() === $user){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
