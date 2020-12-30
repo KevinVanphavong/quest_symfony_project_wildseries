@@ -78,9 +78,9 @@ class Program
      */
     private $slug;
 
+// @ORM\JoinColumn(nullable=false)
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="programs")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $owner;
 
