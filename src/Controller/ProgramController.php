@@ -292,7 +292,6 @@ Class ProgramController extends AbstractController
 
         return $this->json([
             'isInWatchlist' => $this->getUser()->isInWatchlist($program)
-        ]);
-    }
+        ]);    }
 
 }
