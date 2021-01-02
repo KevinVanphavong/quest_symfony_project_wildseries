@@ -9,7 +9,7 @@
             <div class="card m-3" style="width: 15rem;">
                 <img class="card-img-top" src="https://via.placeholder.com/300x250" alt="Card image cap">
                 <div class="card-body">
-                    <h2>{{ loop.index }} / {{ category.name }}</h2>
+                    <h2>{{ category.name }}</h2>
                     <p class="card-text">Lorem ipsum</p>
                     <a href="{{ path('category_show', { categoryName: category.name }) }}" class="btn btn-primary">
                         {{'Découvrir les films'|trans}} {{ category.name }}

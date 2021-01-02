@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CategoryRepository;
 use App\Repository\ProgramRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,6 +33,13 @@ Class DefaultController extends AbstractController
     {
         return $this->render('test.html.twig', [
             'website' => 'Wild Séries',
+        ]);
+    }
+
+    public function navbarTop(CategoryRepository $categoryRepository): Response
+    {
+        return $this->render('includes/_navbarTop.html.twig', [
+            'categories' => $categoryRepository->findBy([], ['id' => 'DESC'])
         ]);
     }
 }

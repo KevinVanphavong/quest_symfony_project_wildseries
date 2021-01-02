@@ -135,11 +135,11 @@ class CategoryController extends AbstractController
                 ['category'=> $category], ['id'=>'DESC'], 3
             );
 
-        if (!$programs) {
-            throw $this->createNotFoundException(
-                'No category "'.$categoryName.'" found in category\'s table.'
-            );
-        }
+//        if (!$programs) {
+//            throw $this->createNotFoundException(
+//                'No category "'.$categoryName.'" found in category\'s table.'
+//            );
+//        }
 //        var_dump($category); die();
         return $this->render(
             'category/show.html.twig',

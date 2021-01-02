@@ -7,9 +7,16 @@
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link" href="{{ path("category_index") }}">{{ 'Catégories'|trans }}</a>
+{#                    <a class="nav-item nav-link" href="{{ path("category_index") }}">{{ 'Catégories'|trans }}</a>#}
+                <li class="nav-item dropdown d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="dropbtn">{{ 'Catégories'|trans }}</button>
+                        <div class="dropdown-content">
+                            {{ render(controller('App\\Controller\\DefaultController::navbarTop')) }}
+                        </div>
+                    </div>
                 </li>
+
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
                 </li>

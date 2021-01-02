@@ -1,0 +1,6 @@
+{#{% for category in categories %}#}
+{#    <li class="nav-item"><a href="{{ path('category_show', {categoryName:category.name}) }}">{{ category.name }}</a></li>#}
+{#{% endfor %}#}
+{% for category in categories %}
+    <a  class="dropdown-item text-light" href="{{ path('category_show', {categoryName:category.name}) }}">{{ category.name }}</a>
+{% endfor %}

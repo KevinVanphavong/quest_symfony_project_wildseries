@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 26 (Embedding Controller)
+https://www.loom.com/share/81aea8d3fbd348bf88db5b2d16327904
+
 Here is the video for the challenge 25 (I28n)
 https://www.loom.com/share/d30ef5a3082e48f5bd8036e34f645d5e
 
