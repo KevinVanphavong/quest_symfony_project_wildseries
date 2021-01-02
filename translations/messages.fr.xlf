@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="CDjx2ju" resname="hello_username">
+        <source>hello_username</source>
+        <target>%username%</target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="eyTGnHG" resname="Répertorie des catégories">
+        <source>Répertorie des catégories</source>
+        <target>Répertorie des catégories</target>
+      </trans-unit>
+      <trans-unit id="OXfTUpb" resname="Categorie">
+        <source>Categorie</source>
+        <target>Categorie</target>
+      </trans-unit>
+      <trans-unit id="QuN2BLY" resname="Modifier">
+        <source>Modifier</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="APnFM0V" resname="Ajouter">
+        <source>Ajouter</source>
+        <target>Ajouter</target>
+      </trans-unit>
+      <trans-unit id="fJcjU2X" resname="Administration de">
+        <source>Administration de</source>
+        <target>Administration de</target>
+      </trans-unit>
+      <trans-unit id="0gc67be" resname="Les catégories">
+        <source>Les catégories</source>
+        <target>Les catégories</target>
+      </trans-unit>
+      <trans-unit id="f7tLDE3" resname="Les séries">
+        <source>Les séries</source>
+        <target>Les séries</target>
+      </trans-unit>
+      <trans-unit id="EZaj8m6" resname="Les épisodes">
+        <source>Les épisodes</source>
+        <target>Les épisodes</target>
+      </trans-unit>
+      <trans-unit id="iDxsxQp" resname="Les acteurs">
+        <source>Les acteurs</source>
+        <target>Les acteurs</target>
+      </trans-unit>
+      <trans-unit id="cKcbRG0" resname="Répertoire des acteurs">
+        <source>Répertoire des acteurs</source>
+        <target>Répertoire des acteurs</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="x_cfj.L" resname="Index des épisodes">
+        <source>Index des épisodes</source>
+        <target>Index des épisodes</target>
+      </trans-unit>
+      <trans-unit id="eOeSABC" resname="Titre">
+        <source>Titre</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="fmZlI_I" resname="Saison">
+        <source>Saison</source>
+        <target>Saison</target>
+      </trans-unit>
+      <trans-unit id="__MUOhy" resname="Répertoire des séries">
+        <source>Répertoire des séries</source>
+        <target>Répertoire des séries</target>
+      </trans-unit>
+      <trans-unit id="aKU0H8a" resname="Catégorie">
+        <source>Catégorie</source>
+        <target>Catégorie</target>
+      </trans-unit>
+      <trans-unit id="l3rmyww" resname="Découvrir">
+        <source>Découvrir</source>
+        <target>Découvrir</target>
+      </trans-unit>
+      <trans-unit id="e_abyul" resname="Aucune saison n'est disponible fraté">
+        <source>Aucune saison n'est disponible fraté</source>
+        <target>Aucune saison n'est disponible fraté</target>
+      </trans-unit>
+      <trans-unit id="OI367Wt" resname="Acteurs">
+        <source>Acteurs</source>
+        <target>Acteurs</target>
+      </trans-unit>
+      <trans-unit id="BRJc8v0" resname="Aucun acteur pour cette série">
+        <source>Aucun acteur pour cette série</source>
+        <target>Aucun acteur pour cette série</target>
+      </trans-unit>
+      <trans-unit id="YJzPlZR" resname="Retour à la liste des programmes">
+        <source>Retour à la liste des programmes</source>
+        <target>Retour à la liste des programmes</target>
+      </trans-unit>
+      <trans-unit id="sZxFC0f" resname="Episode">
+        <source>Episode</source>
+        <target>Episode</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="9516ize" resname="Commentaires">
+        <source>Commentaires</source>
+        <target>Commentaires</target>
+      </trans-unit>
+      <trans-unit id="4uymS9c" resname="De">
+        <source>De</source>
+        <target>De</target>
+      </trans-unit>
+      <trans-unit id="2NosSd8" resname="Note">
+        <source>Note</source>
+        <target>Note</target>
+      </trans-unit>
+      <trans-unit id="SNPoFla" resname="Commentaire">
+        <source>Commentaire</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit id="goxluGo" resname="Ajouter un commentaire">
+        <source>Ajouter un commentaire</source>
+        <target>Ajouter un commentaire</target>
+      </trans-unit>
+      <trans-unit id="4tp97FU" resname="Retour aux épisodes">
+        <source>Retour aux épisodes</source>
+        <target>Retour aux épisodes</target>
+      </trans-unit>
+      <trans-unit id="3.mM0Mr" resname="Modifier série">
+        <source>Modifier série</source>
+        <target>Modifier série</target>
+      </trans-unit>
+      <trans-unit id="7yOllAJ" resname="Retour">
+        <source>Retour</source>
+        <target>Retour</target>
+      </trans-unit>
+      <trans-unit id="36QWkEo" resname="Decouvrir">
+        <source>Decouvrir</source>
+        <target>Decouvrir</target>
+      </trans-unit>
+      <trans-unit id="Rdu0oY1" resname="Aucun épisode, va au lit !">
+        <source>Aucun épisode, va au lit !</source>
+        <target>Aucun épisode, va au lit !</target>
+      </trans-unit>
+      <trans-unit id="NSqXHio" resname="Plus de détails sur">
+        <source>Plus de détails sur</source>
+        <target>Plus de détails sur</target>
+      </trans-unit>
+      <trans-unit id="oEm0gEX" resname="Éditer">
+        <source>Éditer</source>
+        <target>Éditer</target>
+      </trans-unit>
+      <trans-unit id="Mkzk.WP" resname="Aucune série trouvée.">
+        <source>Aucune série trouvée.</source>
+        <target>Aucune série trouvée.</target>
+      </trans-unit>
+      <trans-unit id="j5_bCOw" resname="Retour à l'accueil">
+        <source>Retour à l'accueil</source>
+        <target>Retour à l'accueil</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="QAzfTEE" resname="Sauvegarder">
+        <source>Sauvegarder</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="2iLA6Jp" resname="Ajouter une nouvelle série">
+        <source>Ajouter une nouvelle série</source>
+        <target>Ajouter une nouvelle série</target>
+      </trans-unit>
+      <trans-unit id="sYru0ag" resname="Se déconnecter">
+        <source>Se déconnecter</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="xDb5n.5" resname="S'enregistrer">
+        <source>S'enregistrer</source>
+        <target>S'enregistrer</target>
+      </trans-unit>
+      <trans-unit id="piivmAm" resname="Créer un compte">
+        <source>Créer un compte</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="cdx0hz4" resname="Enregistrer">
+        <source>Enregistrer</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="UZkNe_2" resname="Filmographie">
+        <source>Filmographie</source>
+        <target>Filmographie</target>
+      </trans-unit>
+      <trans-unit id="UPaYld3" resname="Liste des séries jouées">
+        <source>Liste des séries jouées</source>
+        <target>Liste des séries jouées</target>
+      </trans-unit>
+      <trans-unit id="RAVmyXY" resname="Aucun épisode trouvé.">
+        <source>Aucun épisode trouvé.</source>
+        <target>Aucun épisode trouvé.</target>
+      </trans-unit>
+      <trans-unit id="cwKAb53" resname="Modifier un acteur">
+        <source>Modifier un acteur</source>
+        <target>Modifier un acteur</target>
+      </trans-unit>
+      <trans-unit id="KnWKPAv" resname="Voici la liste des acteurs dans nos séries">
+        <source>Voici la liste des acteurs dans nos séries</source>
+        <target>Voici la liste des acteurs dans nos séries</target>
+      </trans-unit>
+      <trans-unit id="VI1NYMl" resname="Bienvenue sur notre site">
+        <source>Bienvenue sur notre site</source>
+        <target>Bienvenue sur notre site</target>
+      </trans-unit>
+      <trans-unit id="49QjFAG" resname="Nos derniers ajouts">
+        <source>Nos derniers ajouts</source>
+        <target>Nos derniers ajouts</target>
+      </trans-unit>
+      <trans-unit id="pheUJw5" resname="Numéro">
+        <source>Numéro</source>
+        <target>Numéro</target>
+      </trans-unit>
+      <trans-unit id="Mz2a3Ay" resname="Modifier un épisode">
+        <source>Modifier un épisode</source>
+        <target>Modifier un épisode</target>
+      </trans-unit>
+      <trans-unit id="QLeNDdM" resname="Retour à la liste">
+        <source>Retour à la liste</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="20jkmjQ" resname="Répertoire des épisodes">
+        <source>Répertoire des épisodes</source>
+        <target>Répertoire des épisodes</target>
+      </trans-unit>
+      <trans-unit id="cBkVAFQ" resname="Série">
+        <source>Série</source>
+        <target>Série</target>
+      </trans-unit>
+      <trans-unit id="3x5Xsog" resname="Voir plus">
+        <source>Voir plus</source>
+        <target>Voir plus</target>
+      </trans-unit>
+      <trans-unit id="hiCrzci" resname="Aucun episode trouvée">
+        <source>Aucun episode trouvée</source>
+        <target>Aucun episode trouvée</target>
+      </trans-unit>
+      <trans-unit id="VL0rg5S" resname="Créer un nouvelle épisode">
+        <source>Créer un nouvelle épisode</source>
+        <target>Créer un nouvelle épisode</target>
+      </trans-unit>
+      <trans-unit id="ViuxV1e" resname="Nombre">
+        <source>Nombre</source>
+        <target>Nombre</target>
+      </trans-unit>
+      <trans-unit id="VhQI.8p" resname="Année">
+        <source>Année</source>
+        <target>Année</target>
+      </trans-unit>
+      <trans-unit id="d5a1U5I" resname="Modifier une saison">
+        <source>Modifier une saison</source>
+        <target>Modifier une saison</target>
+      </trans-unit>
+      <trans-unit id="H7BNhZ3" resname="Répertoire des saison">
+        <source>Répertoire des saison</source>
+        <target>Répertoire des saison</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="Sh6EfsR" resname="Voir">
+        <source>Voir</source>
+        <target>Voir</target>
+      </trans-unit>
+      <trans-unit id="60aLNeq" resname="Aucune saison trouvée">
+        <source>Aucune saison trouvée</source>
+        <target>Aucune saison trouvée</target>
+      </trans-unit>
+      <trans-unit id="lpQY9NW" resname="Créer">
+        <source>Créer</source>
+        <target>Créer</target>
+      </trans-unit>
+      <trans-unit id="DKUptx1" resname="Créer une nouvelle saison">
+        <source>Créer une nouvelle saison</source>
+        <target>Créer une nouvelle saison</target>
+      </trans-unit>
+      <trans-unit id="KPRXHyi" resname="Mon compte">
+        <source>Mon compte</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="SxUSCLz" resname="Catégories">
+        <source>Catégories</source>
+        <target>Catégories</target>
+      </trans-unit>
+      <trans-unit id="gS9CsG4" resname="Séries">
+        <source>Séries</source>
+        <target>Séries</target>
+      </trans-unit>
+      <trans-unit id="kXLo7sm" resname="Bonjour">
+        <source>Bonjour</source>
+        <target>Bonjour</target>
+      </trans-unit>
+      <trans-unit id="BRsUZXR" resname="my_account">
+        <source>my_account</source>
+        <target>Mon compte</target>
+      </trans-unit>
+      <trans-unit id="OMep5iL" resname="Retour à la liste des catégories">
+        <source>Retour à la liste des catégories</source>
+        <target>Retour à la liste des catégories</target>
+      </trans-unit>
+      <trans-unit id="1Ly882C" resname="Modifer un épisode">
+        <source>Modifer un épisode</source>
+        <target>Modifer un épisode</target>
+      </trans-unit>
+      <trans-unit id="YdeQGtU" resname="Nos différentes catégories de séries">
+        <source>Nos différentes catégories de séries</source>
+        <target>Nos différentes catégories de séries</target>
+      </trans-unit>
+      <trans-unit id="p.wmCaa" resname="Découvrir les films">
+        <source>Découvrir les films</source>
+        <target>Découvrir les films</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

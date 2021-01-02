@@ -3,25 +3,25 @@
 {% block title %}{{ parent() }} | {{ actor.name }}{% endblock %}
 
 {% block body %}
-    <h1>Filmographie</h1>
+    <h1>{{ 'Filmographie'|trans }}</h1>
     <section class="container">
         <div class="jumbotron bg-light">
             <div class="text-center">
                 <h2 class="m-0">{{ actor.name }}</h2>
             </div>
             <div>
-                <p class="mb-0 mt-2">Liste des séries jouées :</p>
+                <p class="mb-0 mt-2">{{'Liste des séries jouées'|trans}} :</p>
                 {% for program in actor.programs %}
                     <a class="text-dark" href="{{ path("program_show", { slug: program.slug }) }}">- {{ program.title }}</a>
                 {% else %}
-                    <p>Aucun épisode trouvé.</p>
+                    <p>{{'Aucun épisode trouvé.'|trans}}</p>
                 {% endfor %}
             </div>
         </div>
     </section>
     <div class="container-fluid mt-5">
     <a href="{{ path('program_index') }}">
-        Retour à la liste des programmes
+        {{'Retour'}}
     </a>
 </div>
 {% endblock %}

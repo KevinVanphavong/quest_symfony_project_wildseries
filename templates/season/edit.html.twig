@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container-fluid">
-        <h1>Edit Season</h1>
+        <h1>{{ 'Modifier une saison'|trans }}</h1>
 
         <div class="my-2">
             {{ include('season/_form_comment.html.twig', {'button_label': 'Update'}) }}
@@ -14,6 +14,6 @@
             {{ include('season/_delete_form.html.twig') }}
         </div>
 
-        <a href="{{ path('season_index') }}">back to list</a>
+        <a href="{{ path('season_index') }}">{{ 'Retour'|trans }}</a>
     </div>
 {% endblock %}

@@ -24,26 +24,26 @@
                     {% endif %}
                 </div>
                 <div class="d-flex align-items-center">
-                   <p class="label-category">Catégorie :</p><h3>{{ program.category.name }}</h3>
+                   <p class="label-category">{{'Catégorie'|trans}} :</p><h3>{{ program.category.name }}</h3>
                 </div>
                 <p>{{ program.summary }}</p>
                 <div class="d-inline-flex flex-wrap">
                     {% for season in seasons %}
                         <div class="list-seasons mr-1 mb-4 d-flex flex-column align-items-center">
-                            <p class="mb-0">Saison {{ season.number }}</p>
+                            <p class="mb-0">{{ 'Saison'|trans }} {{ season.number }}</p>
                             <a href="{{ path('program_season_show',{ program : program.id, season : season.id }) }}"
-                               class="btn btn-primary">Découvrir</a>
+                               class="btn btn-primary">{{'Découvrir'|trans}}</a>
                         </div>
                     {% else %}
-                        Aucune saison n'est disponible fraté !
+                    {{'Aucune saison n\'est disponible fraté'|trans}} !
                     {% endfor %}
                 </div>
                 <div class="d-flex flex-column">
-                    <p class="mb-0">Acteurs :</p>
+                    <p class="mb-0">{{ 'Acteurs'|trans }} :</p>
                         {% for actor in program.actors %}
                             <a href="{{ path('actor_show', {actor : actor.id}) }}">- {{ actor.name }}</a>
                         {% else %}
-                    <p>Aucun acteur pour cette série</p>
+                    <p>{{'Aucun acteur pour cette série'|trans}}</p>
                         {% endfor %}
                 </div>
             </div>
@@ -54,7 +54,7 @@
 </section>
 
 <a class="back" href="{{ path('program_index') }}">
-    Retour à la liste des programmes
+    {{'Retour à la liste des programmes'|trans}}
 </a>
 {% endblock %}
 {% block javascripts %}

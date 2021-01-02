@@ -3,17 +3,17 @@
 {% block title %}Season index{% endblock %}
 
 {% block body %}
-    <h1>Season index</h1>
+    <h1>{{ 'Répertoire des saison'|trans }}</h1>
 <section class="container">
     <table class="table">
         <thead>
             <tr class="text-center">
                 <th>Id</th>
-                <th>Number</th>
-                <th>Year</th>
-                <th>Série</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th>{{ 'Nombre'|trans }}</th>
+                <th>{{ 'Année'|trans }}</th>
+                <th>{{'Série'|trans }}</th>
+                <th>{{ 'Description'|trans }}</th>
+                <th>{{ 'Actions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,13 +25,13 @@
                 <td class="text-primary">{{ season.program.title }}</td>
                 <td>{{ season.description }}</td>
                 <td>
-                    <a href="{{ path('season_show', {'id': season.id}) }}">show</a>
-                    <a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+                    <a href="{{ path('season_show', {'id': season.id}) }}">{{ 'Voir'|trans }}</a>
+                    <a href="{{ path('season_edit', {'id': season.id}) }}">{{ 'Modifier'|trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{{ 'Aucune saison trouvée'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -39,6 +39,6 @@
 </section>
 
 <div class="container-fluid">
-    <a href="{{ path('season_new') }}">Create new</a>
+    <a href="{{ path('season_new') }}">{{ 'Créer'|trans }}</a>
 </div>
 {% endblock %}

@@ -1,24 +1,22 @@
 {% extends 'base.html.twig' %}
 {%  block body %}
-    <h1>Administration de " {{ website }} "</h1>
+    <h1>{{ 'Administration de'|trans}} " {{ website }} "</h1>
 
     <section class="container text-light d-flex justify-content-between flex-wrap">
         <div class="my-4">
-            <h2>Les catégories</h2>
-            <a href="{{ path('admin_categories') }}" class="btn btn-outline-primary">Index des catégories</a>
+
+            <a href="{{ path('admin_categories') }}" class="btn btn-outline-primary"><h2>{{'Les catégories'|trans}}</h2></a>
         </div>
         <div class="my-4">
-            <h2>Les séries</h2>
-            <a href="{{ path('admin_programs') }}" class="btn btn-outline-primary">Index des séries</a>
+
+            <a href="{{ path('admin_programs') }}" class="btn btn-outline-primary"><h2>{{'Les séries'|trans}}</h2></a>
         </div>
 
         <div class="my-4">
-            <h2>Les épisodes</h2>
-            <a href="{{ path('admin_episodes') }}" class="btn btn-outline-primary">Index des episodes</a>
+            <a href="{{ path('admin_episodes') }}" class="btn btn-outline-primary"><h2>{{'Les épisodes'|trans}}</h2></a>
         </div>
         <div class="my-4">
-            <h2>Les acteurs</h2>
-            <a href="{{ path('admin_actors') }}" class="btn btn-outline-primary">Index des acteurs</a>
+            <a href="{{ path('admin_actors') }}" class="btn btn-outline-primary"><h2>{{ 'Les acteurs'|trans }}</h2></a>
         </div>
 
     </section>

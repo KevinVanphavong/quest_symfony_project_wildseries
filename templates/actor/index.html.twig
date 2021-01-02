@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} | Les acteurs{% endblock %}
 
 {% block body %}
-    <h1>Voici la liste des acteurs dans nos séries</h1>
+    <h1>{{'Voici la liste des acteurs dans nos séries'|trans}}</h1>
     <section class="container">
         {% for actor in actors %}
         <div>

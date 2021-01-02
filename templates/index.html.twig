@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 {%  block body %}
-    <h1>Bienvenido chico sobre nuestro sitio " {{ website }} "</h1>
+    <h1>{{ 'Bienvenue sur notre site'|trans }} " {{ website }} "</h1>
 
     <section class="text-center">
         <img class="black-mirror" src="https://statics.lesinrocks.com/content/thumbs/uploads/2017/12/width-1125-height-612-quality-10/black-mirror-season-4-uss-callister.jpg" alt="">
     </section>
     <section class="container">
-        <h1>Nos derniers ajouts</h1>
+        <h1>{{ 'Nos derniers ajouts'|trans }}</h1>
         {% for program in programs %}
             <div class="jumbotron d-lg-flex bg-light">
                 <div>
@@ -19,21 +19,22 @@
                 <div>
                     <h2><strong>{{ program.title }}</strong> </h2>
                     <div class="d-flex align-items-center">
-                        <p class="label-category">Catégorie :</p>
+                        <p class="label-category">{{'Catégorie'|trans}} :</p>
                         <h3><strong>{{ program.category.name }}</strong></h3>
                     </div>
                     <p class="lead">{{ program.summary }}.</p>
                     <a href="{{ path('program_show', { slug: program.slug }) }}"
-                       class="btn btn-primary">Plus de détails sur {{ program.title }}</a>
+                       class="btn btn-primary">{{'Plus de détails sur'|trans }} {{ program.title }}</a>
                     {% if is_granted("ROLE_ADMIN") %}
-                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
-                    {%endif%}            {% if is_granted("ROLE_CONTRIBUTOR") %}
-                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{'Éditer'|trans}}</a>
+                    {%endif%}
+                    {% if is_granted("ROLE_CONTRIBUTOR") %}
+                        <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{'Éditer'|trans}}</a>
                     {%endif%}
                 </div>
             </div>
         {% else %}
-            Aucune série trouvée.
+        {{ 'Aucune série trouvée.'|trans }}
         {% endfor %}
     </section>
 

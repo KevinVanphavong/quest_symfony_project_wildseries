@@ -42,22 +42,22 @@
                 {% endif %}
             </div>
             <div class="d-flex align-items-center">
-                <p class="label-category">Catégorie :</p>
+                <p class="label-category">{{'Catégorie'|trans}} :</p>
                 <h3><strong>{{ program.category.name }}</strong></h3>
             </div>
             <p class="lead">{{ program.summary }}.</p>
             <a href="{{ path('program_show', { slug: program.slug }) }}"
-               class="btn btn-primary">Plus de détails sur {{ program.title }}</a>
+               class="btn btn-primary">{{'Plus de détails sur'|trans}} {{ program.title }}</a>
             {% if is_granted("ROLE_ADMIN") %}
-                <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{'Éditer'|trans}}</a>
             {%endif%}
             {% if is_granted("ROLE_CONTRIBUTOR") %}
-                <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
+                <a class="btn btn-primary ml-1" href="{{ path('program_edit', { 'slug': program.slug} ) }}">{{'Éditer'|trans}}</a>
             {%endif%}
         </div>
     </div>
     {% else %}
-        Aucune série trouvée.
+        {{'Aucune série trouvée.'|trans}}
     {% endfor %}
     </section>
 
@@ -65,7 +65,7 @@
     <br>
     <hr>
     <a class="back" href="{{ path('app_index') }}">
-        Retour à l'accueil
+        {{'Retour à l\'accueil'|trans}}
     </a>
 {% endblock %}
 {% block javascripts %}

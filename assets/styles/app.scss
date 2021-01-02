@@ -50,3 +50,8 @@ p {
     margin: 20px 0 50px 0;
     box-shadow: 30px 15px 2px $primary, -30px -15px 2px red;
 }
+
+.nav-link:hover {
+    background-color: $light;
+    color: $dark
+}

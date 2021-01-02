@@ -2,27 +2,25 @@
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="{{ path("app_index") }}">Wild Series</a>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-{#                    <a class="nav-item nav-link" href="{{ path("app_index") }}">Accueil</a>#}
                     <p class="m-0 mt-1">|</p>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="{{ path("category_index") }}">Catégories</a>
-                </li>
-                <li class="nav-item">
-                    <p class="m-0 mt-1">|</p>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-item nav-link" href="{{ path("program_index") }}">Séries</a>
+                    <a class="nav-item nav-link" href="{{ path("category_index") }}">{{ 'Catégories'|trans }}</a>
                 </li>
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-item nav-link" href="{{ path("actor_index") }}">Acteurs</a>
+                    <a class="nav-item nav-link" href="{{ path("program_index") }}">{{ 'Séries'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <p class="m-0 mt-1">|</p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-item nav-link" href="{{ path("actor_index") }}">{{ 'Acteurs'|trans }}</a>
                 </li>
                 <li class="nav-item">
                     <p class="m-0 mt-1">|</p>
@@ -35,14 +33,26 @@
                     <p class="m-0 mt-1">|</p>
                 </li>
                 {% endif %}
+                <li class="nav-item">
+                    <div class="d-inline-flex ml-3">
+                        <a class="nav-link title-light border hover" href="{{ path('app_index', {'_locale':'fr'}) }}">Fr</a>
+                        <a class="nav-link title-light border hover" href="{{ path('app_index', {'_locale':'en'}) }}">En</a>
+                    </div>
+                </li>
             </ul>
             {% if app.user %}
-                {{ app.user.email }}
-                <a href="{{ path('app_logout') }}" class="mx-3"> Se déconnecter</a>
-                <a href="{{ path('profile') }}" class="mx-3"> Mon compte</a>
+                <p class="mb-0">
+                    {{ 'Bonjour'|trans }}
+                <strong>
+                    {% trans with {'%username%': app.user.email} %}
+                        hello_username
+                    {% endtrans %}
+                </strong></p>
+                <a href="{{ path('app_logout') }}" class="mx-3"> {{ 'account.logout'|trans }}</a>
+                <a href="{{ path('profile') }}" class="mx-3"> {{ 'my_account'|trans }}</a>
             {% else %}
-                <a href="{{ path('app_login') }}" class="mr-3"> Se connecter</a>
-                <a href="{{ path('app_register') }}" class="btn btn-primary">Créer un compte</a>
+                <a href="{{ path('app_login') }}" class="mr-3"> {{ 'account.login'|trans }}</a>
+                <a href="{{ path('app_register') }}" class="btn btn-primary">{{ 'Mon compte'|trans }}</a>
             {% endif %}
         </div>
     </nav>

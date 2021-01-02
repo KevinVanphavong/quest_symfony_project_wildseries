@@ -3,7 +3,7 @@
 
 {% block body%}
 <section class="container">
-    <h1>{{ program.title }} - Saison {{ season.number }}</h1>
+    <h1>{{ program.title }} - {{ 'Saison'|trans }} {{ season.number }}</h1>
     <p class="text-light"><strong>Description de la saison :</strong></p>
     <p class="text-light">{{ season.description }}</p>
 
@@ -12,15 +12,15 @@
         <div class="col mb-3">
             <div class="card">
                 <div class="card-body">
-                    <p class="card-title"><strong>Episode {{ episode.number }}</p>
+                    <p class="card-title"><strong>{{ 'Episode'|trans }} {{ episode.number }}</p>
                     <h2><strong>" {{ episode.title }} "</strong></h2>
                     <p class="card-text">{{ episode.synopsis }}</p>
-                    <a href="{{ path('program_episode_show',{ program : program.id, season : season.id, episode : episode.id }) }}" class="btn btn-primary">Decouvrir</a>
+                    <a href="{{ path('program_episode_show',{ program : program.id, season : season.id, episode : episode.id }) }}" class="btn btn-primary">{{ 'Decouvrir'|trans }}</a>
                 </div>
             </div>
         </div>
         {% else %}
-            Aucun épisode, va au lit !
+        {{'Aucun épisode, va au lit !'|trans}}
         {% endfor %}
     </div>
 
@@ -28,6 +28,6 @@
 
 
     <a class="back" href="{{ path('program_show', {slug: program.slug}) }}">
-        Retour aux épisodes
+        {{'Retour aux épisodes'|trans}}
     </a>
 {% endblock %}

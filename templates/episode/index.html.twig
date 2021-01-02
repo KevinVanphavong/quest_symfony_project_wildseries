@@ -3,18 +3,18 @@
 {% block title %}Episode index{% endblock %}
 
 {% block body %}
-    <h1>Episode index</h1>
+    <h1>{{ 'Répertoire des épisodes'|trans }}</h1>
 
 <section class="container">
     <table class="table">
         <thead>
             <tr class="text-center">
                 <th>Id</th>
-                <th>Title</th>
-                <th>Number</th>
-                <th>Série</th>
+                <th>{{ 'Titre'|trans }}</th>
+                <th>{{ 'Numéro'|trans }}</th>
+                <th>{{'Série'|trans }}</th>
                 <th>Synopsis</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -26,13 +26,13 @@
                 <td class="text-primary">{{ episode.season.program.title }}</td>
                 <td>{{ episode.synopsis }}</td>
                 <td>
-                    <a href="{{ path('episode_show', {slug: episode.slug}) }}">show</a>
-                    <a href="{{ path('episode_edit', {slug: episode.slug}) }}">edit</a>
+                    <a href="{{ path('episode_show', {slug: episode.slug}) }}">{{ 'Voir plus'|trans }}</a>
+                    <a href="{{ path('episode_edit', {slug: episode.slug}) }}">{{ 'Modifier' }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{{ 'Aucun episode trouvée'|trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -40,6 +40,6 @@
 </section>
 
 <div class="container-fluid">
-    <a href="{{ path('episode_new') }}">Create new</a>
+    <a href="{{ path('episode_new') }}">{{ 'Créer un nouvelle épisode'|trans }}</a>
 </div>
 {% endblock %}

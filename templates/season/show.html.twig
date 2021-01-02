@@ -3,7 +3,7 @@
 {% block title %}Season{% endblock %}
 
 {% block body %}
-    <h1>Season</h1>
+    <h1>{{ season.program.title }} - {{ 'Saison'|trans }} n°{{ season.number }}</h1>
 
 <div class="container mt-5">
 
@@ -14,15 +14,15 @@
             <td>{{ season.id }}</td>
         </tr>
         <tr>
-            <th>Number</th>
+            <th>{{ 'Nombre'|trans }}</th>
             <td>{{ season.number }}</td>
         </tr>
         <tr>
-            <th>Year</th>
+            <th>{{ 'Année'|trans }}</th>
             <td>{{ season.year }}</td>
         </tr>
         <tr>
-            <th>Description</th>
+            <th>{{ 'Description'|trans }}</th>
             <td>{{ season.description }}</td>
         </tr>
         </tbody>
@@ -31,7 +31,7 @@
 </div>
 <div class="container-fluid">
     <div class="my-2">
-        <a href="{{ path('season_edit', {'id': season.id}) }}" class="btn btn-primary">edit</a>
+        <a href="{{ path('season_edit', {'id': season.id}) }}" class="btn btn-primary">{{ 'Modifier'|trans }}</a>
     </div>
 
     <div class="my-2">
@@ -39,7 +39,7 @@
     </div>
 
     <div class="my-2">
-        <a href="{{ path('season_index') }}">back to list</a>
+        <a href="{{ path('season_index') }}">{{ 'Retour'|trans }}</a>
     </div>
 </div>
 {% endblock %}

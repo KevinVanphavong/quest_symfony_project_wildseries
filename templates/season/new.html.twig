@@ -4,14 +4,14 @@
 
 {% block body %}
 <div class="container-fluid">
-    <h1>Create new Season</h1>
+    <h1>{{ 'Créer une nouvelle saison'|trans }}</h1>
 
     <div class="my-2">
         {{ include('season/_form_comment.html.twig') }}
     </div>
 
     <div class="my-2">
-        <a href="{{ path('season_index') }}">back to list</a>
+        <a href="{{ path('season_index') }}">{{ 'Retour'|trans }}</a>
     </div>
 </div>
 {% endblock %}

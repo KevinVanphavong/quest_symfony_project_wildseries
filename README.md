@@ -1,6 +1,9 @@
 # quest_symfony_project_wildseries
 WCS quest about symfony - creating website/app about series
 
+Here is the video for the challenge 25 (I28n)
+https://www.loom.com/share/d30ef5a3082e48f5bd8036e34f645d5e
+
 Here is the video for the challenge 24 (ajax for watchlist)
 https://www.loom.com/share/271120d26e3847acb8e8792f11a29846
 

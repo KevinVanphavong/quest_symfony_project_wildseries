@@ -4,7 +4,7 @@
 
 {% block body %}
     <div class="container-fluid">
-        <h1>Edit Episode</h1>
+        <h1>{{ 'Modifer un épisode'|trans }}</h1>
 
         <div class="my-2">
             {{ include('category/_form_comment.html.twig', {'button_label': 'Modifier'}) }}
@@ -14,6 +14,6 @@
             {{ include('category/_delete_form.html.twig') }}
         </div>
 
-        <a href="{{ path('admin_categories') }}">Retour</a>
+        <a href="{{ path('admin_categories') }}">{{ 'Retour'|trans }}</a>
     </div>
 {% endblock %}

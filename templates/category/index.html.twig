@@ -3,16 +3,16 @@
 
 {% block body %}
     <section class="container">
-        <h1>Nos différentes catégories de séries</h1>
+        <h1>{{'Nos différentes catégories de séries'|trans}}</h1>
         <div class="row justify-content-center flex-wrap">
         {% for category in categories %}
             <div class="card m-3" style="width: 15rem;">
                 <img class="card-img-top" src="https://via.placeholder.com/300x250" alt="Card image cap">
                 <div class="card-body">
                     <h2>{{ loop.index }} / {{ category.name }}</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">Lorem ipsum</p>
                     <a href="{{ path('category_show', { categoryName: category.name }) }}" class="btn btn-primary">
-                        Découvrir les films {{ category.name }}
+                        {{'Découvrir les films'|trans}} {{ category.name }}
                     </a>
                 </div>
             </div>
@@ -23,6 +23,6 @@
 
     </section>
     <a class="back" href="{{ path('app_index') }}">
-        Retour à l'accueil
+        {{'Retour à l\'accueil'|trans}}
     </a>
 {% endblock %}

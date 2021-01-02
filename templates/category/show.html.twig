@@ -16,21 +16,21 @@
             <div>
                 <h2 class="display-4"> <strong>{{ program.title }}</strong> </h2>
                 <div class="d-flex align-items-center">
-                    <p class="label-category">Catégorie :</p>
+                    <p class="label-category">{{'Catégorie'|trans}} :</p>
                     <h3><strong>{{ program.category.name }}</strong></h3>
                 </div>
                 <p>{{ program.summary }}.</p>
                 <a href="{{ path('program_show', { slug: program.slug }) }}" class="btn btn-primary">
-                    Plus de détails sur {{ program.title }}
+                    {{'Plus de détails sur'|trans}} {{ program.title }}
                 </a>
             </div>
         </div>
     {% else %}
-        Aucune série trouvée.
+    {{'Aucune série trouvée.'|trans}}
     {% endfor %}
 
     <a class="back" href="{{ path('category_index') }}">
-        Retour à la liste des catégories
+        {{'Retour à la liste des catégories'|trans}}
     </a>
 </section>
 {% endblock %}
