@@ -15,10 +15,13 @@
                     <p class="card-title"><strong>{{ 'Episode'|trans }} {{ episode.number }}</p>
                     <h2><strong>" {{ episode.title }} "</strong></h2>
                     <p class="card-text">{{ episode.synopsis }}</p>
-                    <a href="{{ path('program_episode_show',{ program : program.id, season : season.id, episode : episode.id }) }}" class="btn btn-primary">{{ 'Decouvrir'|trans }}</a>
+                    <a href="{{ path('program_episode_show',{ program : program.slug, season : season.number, episode : episode.slug }) }}" class="btn btn-primary">{{ 'Decouvrir'|trans }}</a>
                 </div>
             </div>
         </div>
+            <div class="text-light">
+                {{ episode.slug }}
+            </div>
         {% else %}
         {{'Aucun épisode, va au lit !'|trans}}
         {% endfor %}

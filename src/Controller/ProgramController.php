@@ -23,6 +23,8 @@ use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+
 
 /**
  * Class ProgramController
@@ -182,10 +184,10 @@ Class ProgramController extends AbstractController
 
     /**
      * @Route("/{program}/seasons/{season}",
-     *     requirements={"program"="\d+", "season"="\d+"},
      *     methods={"GET"},
      *     name="season_show")
-     *
+     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"program": "slug"}})
+     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"season": "number"}})
      * @param Program $program
      * @param Season $season
      *
@@ -218,18 +220,19 @@ Class ProgramController extends AbstractController
 
     /**
      * @Route("/{program}/seasons/{season}/episode/{episode}",
-     *     requirements={"program"="\d+", "season"="\d+", "episode"="\d+"},
      *     methods={"GET", "POST"},
      *     name="episode_show")
-     *
+     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"program": "slug"}})
+     * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episode": "slug"}})
+     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"season": "number"}})
      * @param Program $program
      * @param Season $season
      * @param Episode $episode
      * @param Request $request
      * @return Response
      */
-    public function showEpisode(Program $program, Season $season, Episode $episode,
-//                                Comment $comment,
+    public function showEpisode(Program $program,Season $season,
+                                Episode $episode,
                                 Request $request): Response
     {
         $comment = new Comment();
@@ -243,12 +246,12 @@ Class ProgramController extends AbstractController
             $entityManager->persist($comment);
             $entityManager->flush();
             return $this->redirectToRoute('program_index');
+
         }
         return $this->render('program/episode_show.html.twig', [
             'program' => $program,
             'episode' => $episode,
             'season' => $season,
-//            'comment' => $comment,
             'formComment' => $form->createView(),
         ]);
     }

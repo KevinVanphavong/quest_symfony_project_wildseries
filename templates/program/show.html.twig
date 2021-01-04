@@ -31,7 +31,7 @@
                     {% for season in seasons %}
                         <div class="list-seasons mr-1 mb-4 d-flex flex-column align-items-center">
                             <p class="mb-0">{{ 'Saison'|trans }} {{ season.number }}</p>
-                            <a href="{{ path('program_season_show',{ program : program.id, season : season.id }) }}"
+                            <a href="{{ path('program_season_show',{ program : program.slug, season : season.number }) }}"
                                class="btn btn-primary">{{'Découvrir'|trans}}</a>
                         </div>
                     {% else %}
@@ -41,7 +41,7 @@
                 <div class="d-flex flex-column">
                     <p class="mb-0">{{ 'Acteurs'|trans }} :</p>
                         {% for actor in program.actors %}
-                            <a href="{{ path('actor_show', {actor : actor.id}) }}">- {{ actor.name }}</a>
+                            <a href="{{ path('actor_show', {actor : actor.name}) }}">- {{ actor.name }}</a>
                         {% else %}
                     <p>{{'Aucun acteur pour cette série'|trans}}</p>
                         {% endfor %}
