@@ -3,12 +3,11 @@
 {% block body %}
     <h1>{{'Ajouter une nouvelle série'|trans}}</h1>
     <section class="container">
-{#    {{ form_start(form) }}#}
-    <div class="text-light">
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-    {{ form_widget(form) }}
-    <input type='submit' value='Add program'>
-    {{ form_end(form) }}
-    </div>
+        <div class="text-light">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+        {{ form_widget(form) }}
+        <input type='submit' value='Add program'>
+        {{ form_end(form) }}
+        </div>
     </section>
 {% endblock %}
