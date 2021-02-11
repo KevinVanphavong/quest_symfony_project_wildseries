@@ -275,14 +275,11 @@ Class ProgramController extends AbstractController
 
     /**
      * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
-     * @param Request $request
      * @param Program $program
      * @param EntityManagerInterface $entityManager
      * @return Response
      */
-    public function addToWatchlist(Request $request,
-                                   Program $program,
-                                   EntityManagerInterface $entityManager): Response
+    public function addToWatchlist(Program $program, EntityManagerInterface $entityManager): Response
     {
         if ($this->getUser()->getWatchlist()->contains($program)) {
             $this->getUser()->removeWatchlist($program);
